@@ -105,7 +105,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you found a bug or have a suggestion for improvement, please create an [Issue](https://github.com/yourusername/DropPrevention/issues) in the repository.
+If you found a bug or have a suggestion for improvement, please create an [Issue](https://github.com/ryzzi00/DropPrevention/issues) in the repository.
 
 ## Acknowledgments
 
