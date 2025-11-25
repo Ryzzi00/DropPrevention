@@ -16,7 +16,7 @@ DropPrevention is a simple and convenient plugin that gives players the ability 
 
 ## Installation
 
-1. Download the latest version of the plugin from the [Releases](https://github.com/yourusername/DropPrevention/releases) section
+1. Download the latest version of the plugin from the [Releases](https://github.com/ryzzi00/DropPrevention/releases) section
 2. Place the `DropPrevention.jar` file in the `plugins` folder of your server
 3. Restart the server
 4. The plugin will automatically create the necessary configuration files
