@@ -64,7 +64,7 @@ File for storing player settings (created automatically, no editing required).
 If you want to build the plugin yourself:
 
 ```bash
-git clone https://github.com/yourusername/DropPrevention.git
+git clone https://github.com/ryzzi00/DropPrevention.git
 cd DropPrevention
 ./gradlew build
 ```
