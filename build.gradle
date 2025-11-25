@@ -16,6 +16,10 @@ repositories {
     maven {
         url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
     }
+    
+    maven {
+        url = "https://repo.codemc.org/repository/maven-public/"
+    }
 }
 
 dependencies {
@@ -25,17 +29,15 @@ dependencies {
 }
 
 shadowJar {
-    relocate 'org.bstats', 'org.ryzzi00.dropPrevention.bstats'
+    archiveBaseName.set('DropPrevention')
+    archiveClassifier.set('')
+    relocate('org.bstats', 'org.ryzzi00.DropPrevention.bstats')
     mergeServiceFiles()
 }
 
 jar {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    manifest {
-        attributes(
-                'Main-Class': 'org.ryzzi00.DropPrevention'
-        )
-    }
+    enabled = false
+    archiveClassifier.set('original')
 }
 
 tasks.withType(JavaCompile) {
@@ -43,6 +45,6 @@ tasks.withType(JavaCompile) {
     options.compilerArgs << "-Xlint:-options"
 }
 
-tasks.named('shadowJar') {
-    mergeServiceFiles()
+build {
+    dependsOn shadowJar
 }

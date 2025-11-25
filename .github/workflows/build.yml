@@ -26,19 +26,19 @@ jobs:
         gradle-version: 8.8
         
     - name: Build with Gradle
-      run: gradle build
-      
+      run: gradle shadowJar
+    
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v4
       with:
         name: DropPrevention
-        path: build/libs/*.jar
+        path: build/libs/DropPrevention.jar
         retention-days: 30
     
     - name: Upload to Release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: build/libs/*.jar
+        artifacts: build/libs/DropPrevention.jar
         tag: ${{ github.event.release.tag_name }}
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
