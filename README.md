@@ -99,6 +99,9 @@ DropPrevention/
 - Localization system
 - Player settings storage
 
+# bStats
+![bStats](https://bstats.org/signatures/bukkit/DropPrevention.svg)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
