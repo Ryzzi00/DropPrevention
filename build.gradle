@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-group = 'org.schstudio'
+group = 'org.ryzzi00'
 version = '1.0.0'
 
 sourceCompatibility = 1.8
@@ -20,13 +21,19 @@ repositories {
 dependencies {
     compileOnly 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
     implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.bstats:bstats-bukkit:3.0.2'
+}
+
+shadowJar {
+    relocate 'org.bstats', 'org.ryzzi00.dropPrevention.bstats'
+    mergeServiceFiles()
 }
 
 jar {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
     manifest {
         attributes(
-                'Main-Class': 'org.schstudio.DropPrevention'
+                'Main-Class': 'org.ryzzi00.DropPrevention'
         )
     }
 }
@@ -34,4 +41,8 @@ jar {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     options.compilerArgs << "-Xlint:-options"
+}
+
+tasks.named('shadowJar') {
+    mergeServiceFiles()
 }

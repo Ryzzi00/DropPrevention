@@ -1,5 +1,7 @@
 package org.ryzzi00.dropPrevention;
 
+import org.bstats.bukkit.Metrics;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,12 +21,14 @@ public class DropPrevention extends JavaPlugin implements Listener {
         logic = new Logic(getDataFolder());
         lang = new Lang(getDataFolder());
 
+        int pluginId = 28127;
+        Metrics metrics = new Metrics(this, pluginId);
+
         Bukkit.getPluginManager().registerEvents(this, this);
 
         this.getCommand("drop").setTabCompleter(new TabCompliter());
 
         getLogger().info("Plugin enabled!");
-        getLogger().info("Powered by SCH Studio");
     }
 
     @Override
