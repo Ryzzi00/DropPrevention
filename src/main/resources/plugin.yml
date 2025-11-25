@@ -1,0 +1,13 @@
+name: DropPrevention
+version: '1.0'
+main: org.ryzzi00.dropPrevention.DropPrevention
+api-version: '1.8'
+authors: [Ryzzi00]
+commands:
+  drop:
+    description: Main command
+    usage: /drop on|of|reloadLanguage
+permissions:
+  drop.admin:
+    description: Reload language
+    default: op

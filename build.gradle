@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.schstudio'
+version = '1.0.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compileOnly 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    manifest {
+        attributes(
+                'Main-Class': 'org.schstudio.DropPrevention'
+        )
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << "-Xlint:-options"
+}
